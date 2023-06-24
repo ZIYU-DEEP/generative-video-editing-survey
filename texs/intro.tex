@@ -1,9 +1,10 @@
 \section{Introduction}
-The tentative category below follows from~\cite{wang2023gen}.
+\paragraph{Text guided video editing.} The tentative category below follows from~\cite{wang2023gen}.
 \begin{itemize}
-    \item \textbf{Pre-trained text-to-video}: Dreamix~\citep{molad2023dreamix},
+    \item \textbf{Pre-trained text-to-video}: Dreamix~\citep{molad2023dreamix}; ~\cite{ge2022long} jointly uses time-agnostic VQ-GAN and time-senstive transformer; 
+    \item \textbf{One-shot tuning text-to-video}: Tune-A-Video~\citep{wu2022tune}; VideoLDM~\citep{blattmann2023align};
     \item \textbf{Tuning-free text-to-video}: Text2Video-Zero~\citep{khachatryan2023text2video}, Video-P2P~\citep{liu2023video}, Fatezero~\citep{qi2023fatezero}.
-    \item \textbf{One-shot tuning text-to-video}: Tune-A-Video~\citep{wu2022tune}.
 \end{itemize}
 
-The above work use attention-based approach to control temporal consistency. Recently, 
+
+One major challenge of generative video editing is to maintain temporal consistency. The mainstream of this line of study uses attention-based approach to control temporal consistency~\citep{wu2022tune}. Recently, there is a new line of work using other inductive biases to for consistency control, \eg Rerender-A-Video~\citep{yang2023rerender} uses optical flow, \cite{lee2023shape} uses dense semantic correspondence to 
