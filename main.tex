@@ -1,0 +1,291 @@
+\documentclass{article}
+
+% ========= Import packages ========= %
+\PassOptionsToPackage{round, compress}{natbib}
+\usepackage{neurips_2023}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tabularx}
+\usepackage[pdftex]{graphicx}
+\usepackage{booktabs} % for professional tables
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage{framed}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{multirow}
+
+\usepackage{floatrow} % figure/table side by side; https://tex.stackexchange.com/questions/6850/table-and-figure-side-by-side-with-independent-captions
+% Table float box with bottom caption, box width adjusted to content
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\usepackage{thm-restate}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{xspace} 
+\usepackage{chngcntr}
+\usepackage{xcolor}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+% \usepackage{subfig}
+\usepackage{bm}
+\usepackage{amssymb} 
+\usepackage{amsmath,thmtools}
+\usepackage{dsfont}
+\usepackage{subcaption}
+% \usepackage{hhline}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{algorithm, algorithmic}
+\usepackage[makeroom]{cancel}
+% \usepackage{tcolorbox}
+% \usepackage{fdsymbol}
+% \usepackage{arev}
+\usepackage{pifont}
+
+%%%%%%%%%%%%%
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{pythonhighlight}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{caption}
+% \usepackage{tcolorbox}
+
+%%%%
+
+% \usepackage{subcaption}
+
+\usepackage{nomencl}
+\makenomenclature
+% \usepackage{enumitem}
+
+
+% \newtheorem*{lemma}{Lemma}
+
+\newenvironment{proof}{\emph{Proof:}}{\hfill$\square$}
+\usepackage{tikz}
+\newcommand*\circled[2]{{\small\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt,fill=#2!20] (char) {#1};}}}
+\tikzstyle{every picture}+=[remember picture]
+
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+\tcbuselibrary{theorems}
+
+\definecolor{mine}{RGB}{205, 232, 248}%
+\definecolor{minedark}{RGB}{160, 190, 210}%
+\definecolor{revision}{RGB}{210, 22, 123}
+
+\newcommand{\rebuttal}[1]{{#1}}
+
+\newcommand{\highlight}[1]{\colorbox{mine}{$\displaystyle #1$}}
+% \usepackage{tcolorbox}
+% \usepackage{calrsfs}
+
+%%%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%%%
+\newcounter{exa}
+\definecolor{gblue}{RGB}{66,133,244}
+\definecolor{gred}{RGB}{219,68,55}
+\definecolor{gyellow}{RGB}{244,180,0}
+\definecolor{ggreen}{RGB}{15,157,88}
+\definecolor{lpcolor}{RGB}{42,74,138}
+\definecolor{morelcolor}{RGB}{185,18,32}
+\definecolor{bgcolor}{RGB}{230,245,208}
+\definecolor{framecolor}{RGB}{244,109,67}
+
+% ========= Set up macros ========= %
+\input{macros}
+% \input{notations.tex}
+\newcommand*{\tikzmk}[1]{\tikz[remember picture,overlay,] \node (#1) {};\ignorespaces}
+%define a boxing command, argument = colour of box
+\newcommand{\boxit}[1]{\tikz[remember picture,overlay]{\node[yshift=3pt,fill=#1,opacity=.25,fit={(A)($(B)+(.95\linewidth,.8\baselineskip)$)}] {};}\ignorespaces}
+%define some colours according to algorithm parts (or any other method you like)
+
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=yellow!10!white,
+  colframe=red!50!black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}example~\theexa.},
+  title style={fill=yellow!10!white},
+  coltitle=red!50!black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+  }
+
+\newcommand*{\img}[1]{%
+    \raisebox{-.05\baselineskip}{%
+        \includegraphics[
+        height=.7\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
+\newtcolorbox{texample}{myexample}
+
+\newtheorem{exampp}{Example}
+\usepackage{framed}
+\colorlet{shadecolor}{gray!20}
+\newenvironment{examp}
+   {\begin{shaded}\begin{exampp}}
+   {\end{exampp}\end{shaded}}
+
+
+\colorlet{pink}{red!40}
+% \colorlet{blue}{cyan!60}
+\colorlet{LightLavender}{green!5}
+\tcbset{on line, 
+        boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white,colback=LightLavender,  
+        highlight math style={enhanced}
+        }
+
+% ========= Set up link colors ========= %
+\definecolor{alizarin}{RGB}{227,38,54}
+\definecolor{ultramarine}{RGB}{24,13,191}
+\hypersetup{
+  linkcolor  = alizarin,
+  citecolor  = blue,
+  urlcolor   = ultramarine,
+  colorlinks = true,
+}
+
+% ========= Set up notations ========= %
+\makenomenclature
+\renewcommand{\nomname}{Notations}
+
+% ========= Set up highlighters ========= %
+\newcommand{\emphgreen}[1]{\colorbox{Green3!30!white}{$\displaystyle#1$}}
+\newcommand{\emphgold}[1]{\colorbox{Goldenrod!50}{$\displaystyle#1$}}
+\newcommand{\emphmelon}[1]{\colorbox{Melon!50}{$\displaystyle#1$}}
+\newcommand{\emphapricot}[1]{\colorbox{Apricot!50}{$\displaystyle#1$}}
+\newcommand{\emphmarine}[1]{\colorbox{Aquamarine!50}{$\displaystyle#1$}}
+\newcommand{\emphsky}[1]{\colorbox{SkyBlue!50}{$\displaystyle#1$}}
+\newcommand{\emphgray}[1]{\colorbox{gray!10}{$\displaystyle#1$}}
+\newcommand{\emphpurple}[1]{\colorbox{purple!10}{$\displaystyle#1$}}
+\newcommand{\emphred}[1]{\colorbox{Red!30}{$\displaystyle#1$}}
+
+% ========= Set up proof colors ========= %
+\AtBeginEnvironment{proof}{\color{black}}
+% \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% ========= Set up highlight boxes ========= %
+\usepackage[most]{tcolorbox}
+\tcbset{textmarker/.style={%
+        enhanced,
+        parbox=false,boxrule=0mm,boxsep=0mm,arc=0mm,
+        outer arc=0mm,left=0mm,right=3mm,top=7pt,bottom=7pt,
+        toptitle=1mm,bottomtitle=1mm}}
+\newtcolorbox{hintBox}{textmarker, borderline west={6pt}{0pt}{yellow},
+              colback=yellow!10!white}
+\newtcolorbox{importantBox}{textmarker, borderline west={6pt}{0pt}{pink},
+              colback=pink!10!white}
+\newtcolorbox{noteBox}{textmarker, borderline west={6pt}{0pt}{Green3},
+              colback=Green3!10!white}
+\newcommand{\greenbox}[1]{\begin{noteBox} #1 \end{noteBox}}
+\newcommand{\yellowbox}[1]{\begin{hintBox}  #1 \end{hintBox}}
+\newcommand{\pinkbox}[1]{\begin{importantBox} #1 \end{importantBox}}
+
+% ========= Set up theorems ========= %
+\newtheorem{assumption}{Assumption}
+\newtheorem{conj}{Conjecture}
+\declaretheorem[name=Corollary]{cor}
+\declaretheorem[name=Lemma]{lem}
+\declaretheorem[name=Remark]{rem}
+\declaretheorem[name=Theorem]{thm}
+\declaretheorem[name=Proposition]{prop}
+\declaretheorem[name=Definition]{defn}
+\declaretheorem[name=Assumption]{assump}
+
+% ========= Set up algorithm comments ========= %
+% \algnewcommand{\LineComment}[1]{\Statex \(\quad \ \ \textcolor{LightSteelBlue3}{\triangledown} \quad \) \textcolor{LightSteelBlue3}{$/^{\star}$ #1 $^{\star}/$}}
+
+% \algnewcommand{\NoIndLineComment}[1]{\Statex \(\textcolor{LightSteelBlue3}{\triangledown} \quad \) \textcolor{LightSteelBlue3}{$/^{\star}$ #1 $^{\star}/$}}
+
+% \renewcommand{\algorithmiccomment}[1]{\hfill\textcolor{LightSteelBlue3}{$\triangleright$} \quad \textcolor{LightSteelBlue3}{$/^{\star}$ #1 $^{\star}/$}}
+
+% ========= Set up silence warnings ========= %
+% \usepackage{silence}
+% \WarningFilter*{latex}{Text page \thepage\space contains only floats}
+% \WarningFilter{caption}{Unknown document class}
+
+% ========= Color texts for notes ========= %
+% \newcommand{\hf}[1]{{\color{blue}  [\text{Haifeng:} #1]}}
+% \newcommand{\hfr}[1]{{\color{blue}    #1}}
+% \newcommand{\cw}[1]{{\color{brown}  [\text{CW:} #1]}}
+% \newcommand{\y}[1]{{\color{ForestGreen}  [\text{Ye:} #1]}}
+% \newcommand{\alg}[1]{{pLinUCB}}
+% ############### Main Paper Starts Here ############### %
+\title{The State of Generative Video Editing}
+\author{}
+
+\begin{document}
+\maketitle
+
+% ==================================== %
+\begin{abstract}
+
+The advancement of generative models has significantly transformed the field of video editing, offering superior capabilities while reducing computational demands. In this paper, we survey the adoption of various generative models in video editing. We detail strategies for building and refining these models, and highlight techniques for practical application. This work synthesizes key insights from extensive research and provides direction for practitioners and researchers. We present the necessary background on generative models, discuss their relationship with video editing, and demonstrate their real-world applicability. We propose a metric for generation efficiency, offering a basis for comparing different models. We conclude by outlining major open challenges and future directions in the field of generative video editing.
+\end{abstract}
+% ==================================== %
+
+
+
+% ==================================== %
+% \input{1-intro}
+% \input{2-prob}
+% \input{par-context-analysis.tex}
+
+
+% \input{3-par-context}
+% \input{4-par-reward}
+% ==================================== %
+
+% ==================================== %
+
+% ==================================== %
+
+% ==================================== %
+\small
+\medskip
+\bibliographystyle{plainnat}
+\bibliography{main}
+% ==================================== %
+
+% ==================================== %
+\newpage
+\appendix
+\normalsize
+\setcounter{footnote}{0}
+% ==================================== %
+
+
+
+
+
+
+
+\end{document}
